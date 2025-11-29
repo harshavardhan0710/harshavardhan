@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshaa Says - UI/UX Designer | Video Editor | Frontend Developer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+        
+        /* Hero Section - Full Screen Impact */
+        .hero {
+            height: 100vh; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('hero-bg.jpg') center/cover; opacity: 0.3; z-index: 1;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; animation: fadeInUp 1s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; font-weight: 700; }
+        .subtitle { font-size: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 2rem; opacity: 0.9; }
+        .cta-btn { 
+            display: inline-block; padding: 15px 40px; background: #ff6b6b; color: white; text-decoration: none; 
+            border-radius: 50px; font-weight: bold; transition: all 0.3s; box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+        }
+        .cta-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(255,107,107,0.6); }
+
+        /* About Section */
+        .about { padding: 100px 20px; max-width: 1200px; margin: 0 auto; background: #f8f9fa; }
+        .container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #2c3e50; }
+        .about-text p { font-size: 1.1rem; margin-bottom: 1.5rem; color: #555; }
+        .skills { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 2rem; }
+        .skill-tag { background: #667eea; color: white; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; }
+
+        /* Replaceable Image Placeholder */
+        .profile-img { width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+
+        /* Projects Section */
+        .projects { padding: 100px 20px; background: white; }
+        .projects h2 { text-align: center; font-size: 3rem; margin-bottom: 4rem; color: #2c3e50; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .project-card {
+            background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            transition: all 0.4s; position: relative;
+        }
+        .project-card:hover { transform: translateY(-15px); box-shadow: 0 30px 80px rgba(0,0,0,0.2); }
+        .project-img { width: 100%; height: 250px; object-fit: cover; }
+        .project-info { padding: 25px; }
+        .project-info h3 { font-size: 1.5rem; margin-bottom: 10px; color: #2c3e50; }
+        .project-info p { color: #666; margin-bottom: 15px; }
+
+        /* Interactive Scroll Animation */
+        .fade-in { opacity: 0; transform: translateY(50px); transition: all 0.8s; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Contact Section */
+        .contact { padding: 100px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; }
+        .contact-links { display: flex; justify-content: center; gap: 30px; margin-top: 2rem; flex-wrap: wrap; }
+        .contact-links a { color: white; font-size: 1.5rem; transition: all 0.3s; }
+        .contact-links a:hover { transform: scale(1.2); }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+            .project-grid { grid-template-columns: 1fr; }
+            .contact-links { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section - Replace 'hero-bg.jpg' with your image -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Harsha Vardhan</h1>
+            <p class="subtitle">B Tech CSE Student at Marwadi University | UI/UX Designer | Video Editor | Frontend Developer</p>
+            <a href="#projects" class="cta-btn">Explore My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section - Replace 'profile.jpg' with your photo -->
+    <section class="about fade-in">
+        <div class="container">
+            <div class="about-text">
+                <h2>Creative Developer Passionate About Design</h2>
+                <p>Hi, I'm Harsha Vardhan, a first-year BTech CSE student at Marwadi University, diving deep into AI/ML while fueling my passion for crafting intuitive UI/UX designs, dynamic video edits, and responsive frontend websites. With hands-on experience building portfolio sites using HTML/CSS and creating engaging YouTube content, I blend technical skills from my CSE coursework with creative tools like Figma and Premiere Pro to solve real-world design challenges.</p>
+                <div class="skills">
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">Video Editing</span>
+                    <span class="skill-tag">Frontend Dev</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Premiere Pro</span>
+                    <span class="skill-tag">HTML/CSS/JS</span>
+                </div>
+            </div>
+            <img src="profile.jpg" alt="Your Profile Photo" class="profile-img">
+        </div>
+    </section>
+
+    <!-- Projects Section - Replace all project images -->
+    <section id="projects" class="projects">
+        <h2 class="fade-in">Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card fade-in">
+                <img src="uiux-project1.jpg" alt="UI/UX Project" class="project-img">
+                <div class="project-info">
+                    <h3>Student Planner App</h3>
+                    <p>Redesigned mobile app with intuitive UI/UX, wireframes, and prototypes that boosted user engagement by 40%.</p>
+                </div>
+            </div>
+            <div class="project-card fade-in">
+                <img src="video-reel.jpg" alt="Video Editing Reel" class="project-img">
+                <div class="project-info">
+                    <h3>Editing Reel 2025</h3>
+                    <p>Compilation of tutorials, promos, and vlogs edited in Premiere Pro showcasing dynamic motion graphics.</p>
+                </div>
+            </div>
+            <div class="project-card fade-in">
+                <img src="portfolio-website.jpg" alt="Frontend Portfolio" class="project-img">
+                <div class="project-info">
+                    <h3>Responsive Portfolio</h3>
+                    <p>Fully responsive personal portfolio with interactive animations built using HTML, CSS, and JavaScript.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in">
+        <h2>Let's Create Something Amazing Together</h2>
+        <p>Ready to collaborate on your next project? Get in touch!</p>
+        <div class="contact-links">
+            <a href="harshamopuru14@gmail.com">📧 Email</a>
+            <a href="https://www.linkedin.com/in/harsha0710/">💼 LinkedIn</a>
+            <a href="https://www.youtube.com/@harshaasays">📺 YouTube</a>
+            <a href="https://github.com/harshavardhan0710">💻 GitHub</a>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for CTA button
+        document.querySelector('.cta-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
